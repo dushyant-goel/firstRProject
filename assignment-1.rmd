@@ -1,0 +1,144 @@
+
+# Assignment 1
+
+### 1
+
+#### 1
+```{r}
+animals <- c("Snake", "Ostrich", "Cat", "Spider")
+```
+ `animals` is a character vector
+
+#### 2
+```{r}
+num_legs <- c(0, 2, 4, 8)
+```
+
+#### 3
+```{r}
+animals_df <- data.frame(animals, num_legs)
+```
+
+#### 4  
+Yes, the object and their types are listed in the environment window.
+animals_df  |   dataframe 4 obs. of 2 variables
+animals     |   character vector
+num_legs    |   numerical vector
+
+___
+
+### 2
+
+#### 1
+```{r}
+ls() # get list of objects
+?ls # check usage of ls
+```
+`animals`, `num_legs` and `animals_df` are the variables present in environment
+
+#### 2
+```{r}
+?rm # check usage of rm fundtion
+rm("num_legs") # remove `num_legs`
+ls() # animals_df, animals
+```
+
+#### 3
+```{r}
+rm(list = ls()) # Remove all variables from the environment. ls() gives the character vector of all variables in the environment.
+```
+
+___
+
+### 3
+
+see `myFirstRScrip.R`
+
+#### 4
+Yes, the list of objects in working environment is same as 2#1
+
+___
+
+### 4
+
+see `MyFirstRMarkdown.html`
+
+___
+
+### 5
+
+```{r}
+x_vect <- seq(12,2,-2)
+```
+```{r}
+X <- matrix(x_vect, nrow=2)
+Y <- matrix(1:4, nrow=2)
+Z <- matrix(seq(4,10,2), nrow=2)
+
+t(Y) # transpose Y
+t(Z) # transpose Z
+
+Y+Z # matrix sum
+Z+Y # matrix sum
+
+Y %*% Z
+Z %*% Y
+
+# Matrix addition is commutative.  
+# Matrix multiplication is not commutative
+
+Y %*% X
+
+# Error 
+# X %*% Y
+
+# The dimensions of X 2x3 and Y 2x2 do not conform.
+# The dimension of colums of multiplicant and dimenstion of rows of multiplier
+# should be equal for matrix multiplicatoin.
+
+# Element wise multiplication is commutative
+Y * Z
+Z * Y
+
+
+Y_inv <- solve(Y)
+Y_inv %*% Y # we get an identity matrix
+
+Y_inv %*% X # product is as expected
+
+```
+
+___
+
+### 6
+
+```{r}
+myFirstRFunc <- function(n) {
+  # Takes a number as an input and outputs a number
+  
+  stopifnot(is.numeric(n), n%%1==0, n>=0) # Stop if the input is not a non-negative integer.
+  
+  acc <- 0;
+  for(i in 0:n-1) {
+    if(i %% 2 == 0 | i %% 7 == 0) { # Check divisibility
+      acc <- acc + i
+    }
+  }
+  
+  return(acc) # return the sum
+}
+```
+
+___
+
+### 7
+
+see mySecondRScript.R
+
+___
+
+
+
+
+
+
