@@ -1,0 +1,30 @@
+---
+title: "Assignment1RMarkdown"
+author: "Dushyant Goel"
+date: "2024-09-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+```{r}
+x <- seq(0, 20, 0.01)
+y <- sin(x)
+sin_df <- data.frame(x, y)
+```
+
+## sin plotin
+
+```{r}
+plot(sin_df)
+```
+
+
+## Formula
+
+\[\sin^2(x) + \cos^2(x) = 1\]

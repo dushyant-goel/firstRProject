@@ -1,0 +1,23 @@
+
+---
+title: "Assignment1RMarkdown"
+author: "Dushyant Goel"
+date: "2024-09-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+animals <- c("Snake", "Ostrich", "Cat", "Spider")
+num_legs <- c(0, 2, 4, 8)
+animals_df <- data.frame(animals, num_legs)
+ls()
+```
+
+```{r}
+animals_df
+```

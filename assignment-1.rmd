@@ -1,25 +1,26 @@
 
 # Assignment 1
 
-### 1
+### 1 Create a data frame
 
-#### 1
+#### Step 1
 ```{r}
 animals <- c("Snake", "Ostrich", "Cat", "Spider")
 ```
  `animals` is a character vector
 
-#### 2
+#### Step 2
 ```{r}
 num_legs <- c(0, 2, 4, 8)
 ```
 
-#### 3
+#### Step 3
 ```{r}
 animals_df <- data.frame(animals, num_legs)
+animals_df
 ```
 
-#### 4  
+#### Step 4  
 Yes, the object and their types are listed in the environment window.
 animals_df  |   dataframe 4 obs. of 2 variables
 animals     |   character vector
@@ -27,53 +28,60 @@ num_legs    |   numerical vector
 
 ___
 
-### 2
+### 2 Check and delete objects
 
-#### 1
+#### Step 1
 ```{r}
 ls() # get list of objects
 ?ls # check usage of ls
 ```
 `animals`, `num_legs` and `animals_df` are the variables present in environment
 
-#### 2
+#### Step 2
 ```{r}
 ?rm # check usage of rm fundtion
 rm("num_legs") # remove `num_legs`
 ls() # animals_df, animals
 ```
 
-#### 3
+#### Step 3
 ```{r}
-rm(list = ls()) # Remove all variables from the environment. ls() gives the character vector of all variables in the environment.
+rm(list = ls()) 
+# Remove all variables from the environment. ls() gives the character vector of
+# all variables in the environment.
 ```
 
 ___
 
-### 3
+### 3 Create a data frame in R Scripts
 
+#### Step 0,1,2,3
 see `myFirstRScrip.R`
 
-#### 4
+#### Step 4 
 Yes, the list of objects in working environment is same as 2#1
 
 ___
 
-### 4
+### 4 Create a data frame in R Markdown
 
-see `MyFirstRMarkdown.html`
+see `MyFirstRMarkdown.rmd`
 
 ___
 
 ### 5
 
 ```{r}
-x_vect <- seq(12,2,-2)
+x_vect <- seq(12, 2, -2)
+print(x_vect)
 ```
 ```{r}
-X <- matrix(x_vect, nrow=2)
-Y <- matrix(1:4, nrow=2)
-Z <- matrix(seq(4,10,2), nrow=2)
+X <- matrix(x_vect, nrow = 2)
+print(X)
+Y <- matrix(1:4, nrow = 2)
+print(Y)
+Z <- matrix(seq(4, 10, 2), nrow = 2)
+print(Z)
 
 t(Y) # transpose Y
 t(Z) # transpose Z
@@ -110,32 +118,37 @@ Y_inv %*% X # product is as expected
 
 ___
 
-### 6
+### 6 Writing a function within R
 
 ```{r}
-myFirstRFunc <- function(n) {
+my_first_r_func <- function(n) {
   # Takes a number as an input and outputs a number
-  
-  stopifnot(is.numeric(n), n%%1==0, n>=0) # Stop if the input is not a non-negative integer.
-  
-  acc <- 0;
-  for(i in 0:n-1) {
-    if(i %% 2 == 0 | i %% 7 == 0) { # Check divisibility
+
+  stopifnot(is.numeric(n), n %% 1 == 0, n >= 0)
+  # Stop if the input is not a non-negative integer.
+
+  acc <- 0
+  for (i in 0:n - 1) {
+    if(i %% 2 == 0 || i %% 7 == 0) { # Check divisibility
       acc <- acc + i
     }
   }
-  
+
   return(acc) # return the sum
 }
+
+print(my_first_r_func(1000))
 ```
 
 ___
 
-### 7
+### 7 Further R markdown exercises
 
 see mySecondRScript.R
 
 ___
+
+### 8 Commiting and Pushing
 
 
 
